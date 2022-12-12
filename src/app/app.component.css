@@ -1,0 +1,37 @@
+header {
+  background-color: var(--blue512);
+  color: var(--light-grey512);
+  width: auto;
+  height: 15vh;
+  position: relative;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+main {
+  background-color: var(--grey512);
+  width: 100vw;
+  height: 85vh;
+}
+
+.headerDivFlex {
+  display: flex;
+  font-weight: 700;
+  font-size: 1.7vw;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#login {
+  padding: 1em;
+  background-color: var(--light-grey512);
+  color: black;
+  font-size: 1vw;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin-left: 20%;
+}

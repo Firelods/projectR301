@@ -1,0 +1,22 @@
+<div class="mainContainer">
+  <div *ngFor="let product of this.listProducts">
+    <img
+      class="productImg"
+      src="{{ product.imageURL }}"
+      alt="{{ product.title }}"
+    />
+    <div>
+      <div>
+        <div class="productTitle">{{ product.title }}</div>
+        <div class="productPrice">{{ product.publicPrice }}</div>
+      </div>
+      <div class="productBrand">{{ product.brand }}</div>
+      <div>
+        <div
+          *ngFor="let item of this.getArrayFromNumber(product.note)"
+          class="stars"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

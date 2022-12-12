@@ -1,0 +1,9 @@
+.productImg {
+  width: 10vw;
+  mix-blend-mode: multiply;
+}
+.stars {
+  padding: 5px;
+  background-color: var(--blue512);
+  width: 5px;
+}
