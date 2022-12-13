@@ -11,8 +11,12 @@ main {
   background-color: var(--grey512);
   width: 100vw;
   height: 85vh;
+  display: flex;
+  overflow-x: hidden;
 }
+header img{
 
+}
 .headerDivFlex {
   display: flex;
   font-weight: 700;
@@ -35,3 +39,5 @@ main {
   -o-border-radius: 20px;
   margin-left: 20%;
 }
+
+

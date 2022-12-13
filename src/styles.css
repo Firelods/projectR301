@@ -12,3 +12,7 @@
   --grey512: #ccd7dd;
   --light-grey512: #f4f8fb;
 }
+body,html{
+  width: 100vw;
+  height: 100vh;
+}

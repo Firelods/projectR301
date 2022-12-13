@@ -10,7 +10,12 @@ import { ArrayType } from '@angular/compiler';
 export class HomeComponent {
   listProducts: Product[] = [];
   constructor(private productService: ProductServiceService) {
-    this.productService.getProducts().subscribe((data: Product[]) => { this.listProducts = data; });
+    this.productService.getProducts().subscribe((data: Product[]) => {
+      this.listProducts = data;
+      // this.listProducts.forEach((product: Product) => {
+      //   product.brand =
+      // });
+     });
   }
 
   getArrayFromNumber(number: number): string[] {
