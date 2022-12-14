@@ -8,6 +8,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { HomeComponent } from './home/home.component';
 import { BrandComponent } from './brand/brand.component';
 import { ProductComponent } from './product/product.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,15 @@ import { ProductComponent } from './product/product.component';
     HomeComponent,
     BrandComponent,
     ProductComponent
+
+    BrandComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [],
