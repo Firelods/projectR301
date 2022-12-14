@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../interfaces/product';
-import { ProductServiceService } from '../service/product.service';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-admin-page',

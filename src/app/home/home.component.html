@@ -2,6 +2,7 @@
   <div class="mainContainer">
     <div class="productDiv" *ngFor="let product of this.listProducts">
       <img
+        (click)="this.goToProduct(product)"
         class="productImg"
         src="{{ product.imageURL }}"
         alt="{{ product.title }}"
@@ -20,10 +21,21 @@
         </div>
         <div class="starsContainer">
           <div
-            *ngFor="let item of this.getArrayFromNumber(product.note)"
+            *ngFor="let item of this.getArrayFromNumberBlueStar(product.note)"
             class="stars"
           >
             <img class="star" src="../../assets/star.png" alt="star" />
+          </div>
+          <div
+            *ngFor="let item of this.getArrayFromNumberGrayStar(product.note)"
+            class="stars"
+          >
+            <img
+              class="star"
+              style="filter: grayscale(1)"
+              src="../../assets/star.png"
+              alt="star"
+            />
           </div>
         </div>
       </div>
