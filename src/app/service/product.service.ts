@@ -11,7 +11,7 @@ export class ProductServiceService {
 
   constructor(private requestService: RequestServiceService, private request: HttpClient) { }
   getProducts() {
-    return this.request.get<Product[]>(this.requestService.url + 'test').pipe(map((data: Product[]) => {
+    return this.request.get<Product[]>(this.requestService.url + 'getProducts').pipe(map((data: Product[]) => {
       return data;
     }));
   }
