@@ -14,8 +14,7 @@ main {
   display: flex;
   overflow-x: hidden;
 }
-header img{
-
+header img {
 }
 .headerDivFlex {
   display: flex;
@@ -32,6 +31,7 @@ header img{
   background-color: var(--light-grey512);
   color: black;
   font-size: 1vw;
+  cursor: pointer;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -39,5 +39,3 @@ header img{
   -o-border-radius: 20px;
   margin-left: 20%;
 }
-
-
