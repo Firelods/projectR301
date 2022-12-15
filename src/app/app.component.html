@@ -3,7 +3,22 @@
     <img routerLink="/" src="../assets/512.png" alt="512Bank" />
     <div>Produits</div>
     <div>Panier</div>
-    <div id="login" routerLink="/login">Connexion</div>
+    <div
+      class="accountGestion"
+      id="login"
+      *ngIf="!this.loginService.isLoggedIn()"
+      routerLink="/login"
+    >
+      Connexion
+    </div>
+    <div
+      class="accountGestion"
+      id="account"
+      *ngIf="this.loginService.isLoggedIn()"
+      routerLink="/account"
+    >
+      Votre Compte
+    </div>
   </div>
 </header>
 <main>

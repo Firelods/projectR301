@@ -19,14 +19,13 @@ header img {
 .headerDivFlex {
   display: flex;
   font-weight: 700;
-  font-size: 1.7vw;
+  font-size: 1.6em;
   height: 100%;
   align-items: center;
   width: 100%;
   justify-content: space-between;
 }
-
-#login {
+.accountGestion {
   padding: 1em;
   background-color: var(--light-grey512);
   color: black;
@@ -38,4 +37,15 @@ header img {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   margin-left: 20%;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+#login {
+}
+.accountGestion:hover {
+  background-color: var(--dark-blue512);
+  color: var(--light-grey512);
 }

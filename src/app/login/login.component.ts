@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, UntypedFormControl, UntypedFormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { LoginService } from '../service/login.service';
 })
 export class LoginComponent {
   loginForm: FormGroup
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router) {
     this.loginForm = new UntypedFormGroup({
       email: new UntypedFormControl(''),
       password: new UntypedFormControl('')
@@ -21,7 +22,9 @@ export class LoginComponent {
   submit() {
     console.log(this.loginForm.value);
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe((data) => {
-      console.log(data);
+      if (data === 'User login successfully') {
+        this.router.navigate(['/']);
+      }
     });
   }
 }

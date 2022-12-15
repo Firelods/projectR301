@@ -3,6 +3,7 @@ import { Product } from '../interfaces/product';
 import { ProductService } from '../service/product.service';
 import { ArrayType } from '@angular/compiler';
 import { Router } from '@angular/router';
+import { LoginService } from '../service/login.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,12 +11,15 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   listProducts: Product[] = [];
-  constructor(private productService: ProductService, private router: Router) {
+
+  constructor(private productService: ProductService, private router: Router, private loginService: LoginService) {
     this.productService.getProducts().subscribe((data: Product[]) => {
       this.listProducts = data;
       // this.listProducts.forEach((product: Product) => {
       //   product.brand =
       // });
+
+
     });
   }
 
