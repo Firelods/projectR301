@@ -2,6 +2,7 @@ import { BrandService } from './../service/brand.service';
 import { Brand } from './../interfaces/brand';
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-brand',
   templateUrl: './brand.component.html',
@@ -9,10 +10,19 @@ import { Component } from '@angular/core';
 })
 export class BrandComponent {
   targetBrand!: Brand;
+  loaded: boolean = false;
+
   constructor (private brandService: BrandService){
-    const queryString = window.location.search;
-    console.log(queryString);
-    // urlParam:URLSearchParams = new URLSearchParams(window.location.search);
-    // this.brandService.getBrand("panasonic").subscribe((data: Brand)=>{this.targetBrand = data});
+    var currentUrl = new URL(window.location.href);
+    // console.log(currentUrl.searchParams.get('brand'));
+    let brandValue = currentUrl.searchParams.get('brand');
+    if (brandValue != null) {
+      this.brandService.getBrand(brandValue).subscribe((data: Brand) => {
+        this.targetBrand = data;
+        this.loaded = true;
+        console.log(data);
+      });
+    }
   }
+
 }
