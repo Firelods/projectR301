@@ -9,18 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./brand.component.css']
 })
 export class BrandComponent {
-  targetBrand!: Brand;
-  loaded: boolean = false;
+  targetBrand: Brand = new Brand(0, '', '', '');
 
   constructor (private brandService: BrandService){
+    //récupération de la marque souhaité dans l'URL
     var currentUrl = new URL(window.location.href);
-    // console.log(currentUrl.searchParams.get('brand'));
     let brandValue = currentUrl.searchParams.get('brand');
+    //si la marque est présente dans l'URL, on récupère les informations de la marque
     if (brandValue != null) {
       this.brandService.getBrand(brandValue).subscribe((data: Brand) => {
         this.targetBrand = data;
-        this.loaded = true;
-        console.log(data);
       });
     }
   }

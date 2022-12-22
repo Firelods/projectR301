@@ -10,13 +10,11 @@ import { RequestServiceService } from './request.service';
 export class BrandService {
 
   constructor(private requestService: RequestServiceService, private request: HttpClient) { }
-  getBrand(brandId:string){
-    console.log("getBrand called for brand =",brandId);
+  getBrand(brandName:string){
     let param:HttpParams = new HttpParams();
-    param = param.append('brand', brandId);
-    return this.request.get<Brand>(this.requestService.url+'getBrand',{params: param}).pipe(map((data: Brand) => {
-      // console.log("data= ",data);
-      return data;
-    }))
+    param = param.append('brand', brandName);
+    return this.request.get<Brand[]>(this.requestService.url+'getBrand',{params: param}).pipe(map((data: Brand[]) => {
+      return data[0];
+    }));
   }
 }
