@@ -4,6 +4,7 @@ import { map } from 'rxjs';
 import { RequestServiceService } from './request.service';
 import jwt_decode from 'jwt-decode';
 import * as moment from "moment";
+import { User } from '../interfaces/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,6 @@ export class LoginService {
     formData.append('email', email);
     formData.append('password', password);
     return this.http.post<{ message: string, jwt: string }>(this.requestService.url + 'login', formData).pipe(map((data: { message: string, jwt: string }) => {
-      console.log(data);
       if (data.message === 'User login successfully') {
         this.loggedIn = true;
         localStorage.setItem('jwt', data.jwt);
@@ -27,13 +27,14 @@ export class LoginService {
       return data.message;
     }));
   }
-  getUser() {
+  getUser(): User {
     var user = localStorage.getItem('jwt');
     if (user === null) {
-      return null;
+      // return null object
+      return { email: '', iat: 0, exp: 0 };
     }
     console.log(jwt_decode(user));
-    return null;
+    return jwt_decode(user);
   }
   getExpiration() {
     const expiration = localStorage.getItem('expiry');
@@ -44,8 +45,6 @@ export class LoginService {
   }
 
   isLoggedIn() {
-    console.log(moment());
-    console.log(this.getExpiration());
     if (this.getExpiration() === null) {
       return false;
     }

@@ -1,11 +1,17 @@
 <div>
-  <img src="{{this.targetBrand.imageURL}}">
+  <img
+    src="{{ this.targetBrand.imageURL }}"
+    alt="imageMarque"
+    class="brandImg"
+  />
   <div>
     <div id="brandName">
-      {{this.targetBrand.title}}
+      {{ this.targetBrand.title }}
     </div>
     <div id="brandLink">
-      <a href="{{this.targetBrand.link}}" target="_blank">{{this.targetBrand.link}}</a>
+      <a href="{{ this.targetBrand.link }}" target="_blank">{{
+        this.targetBrand.link
+      }}</a>
     </div>
   </div>
 </div>

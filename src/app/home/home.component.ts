@@ -18,8 +18,6 @@ export class HomeComponent {
       // this.listProducts.forEach((product: Product) => {
       //   product.brand =
       // });
-
-
     });
   }
 
