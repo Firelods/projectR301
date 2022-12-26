@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-brand',
   templateUrl: './brand.component.html',
-  styleUrls: ['./brand.component.css']
+  styleUrls: ['./brand.component.css', '../../styles.css']
 })
 export class BrandComponent {
-  targetBrand: Brand = new Brand(0, '', '', '');
+  targetBrand: Brand = new Brand(0, '', '', '','');
 
   constructor (private brandService: BrandService){
     //récupération de la marque souhaité dans l'URL
@@ -18,6 +18,7 @@ export class BrandComponent {
     //si la marque est présente dans l'URL, on récupère les informations de la marque
     if (brandValue != null) {
       this.brandService.getBrand(brandValue).subscribe((data: Brand) => {
+        console.log(data);
         this.targetBrand = data;
       });
     }
