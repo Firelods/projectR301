@@ -1,6 +1,10 @@
 #mainContainer{
+  padding: 2vh 0px;
+}
+
+#content{
   background-color: var(--light-grey512);
-  margin: 0px auto;
+  margin: 0vh auto;
   width: 90vw;
   height: 80vh;
   border-radius: 30px;
