@@ -1,8 +1,6 @@
-#mainContainer{
-  padding: 2vh 0px;
-}
 
-#content{
+
+#mainContainer{
   background-color: var(--light-grey512);
   margin: 0vh auto;
   width: 90vw;
@@ -43,5 +41,5 @@ img{
   align-items: center;
   justify-content: space-evenly;
   height: 100%;
-  width: 100%;
+  width: 100vw;
 }
