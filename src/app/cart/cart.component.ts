@@ -23,5 +23,15 @@ export class CartComponent {
       });
     });
   }
+  deleteItem(cartItem: CartItem) {
+    this.cartService.deleteFromCart(cartItem.product.id, 1).subscribe();
+    this.total -= cartItem.product.publicPrice;
+    if (cartItem.quantity > 1) {
+      cartItem.quantity--;
+      return;
+    } else {
+      this.cart.productList.splice(this.cart.productList.indexOf(cartItem), 1);
+    }
+  }
 
 }

@@ -10,6 +10,9 @@
           value="{{ cartItem.quantity }}"
         />
         <div class="productPrice">{{ cartItem.product.publicPrice }}€</div>
+        <span (click)="deleteItem(cartItem)" class="material-symbols-outlined">
+          close
+        </span>
       </li>
     </ul>
     <div>Total de votre panier : {{ total }}€</div>

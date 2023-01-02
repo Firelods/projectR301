@@ -1,7 +1,8 @@
 .cart {
   background-color: var(--light-grey512);
   width: 70vw;
-  height: 90%;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
   padding: 1em;
   border-radius: 30px;
   -webkit-border-radius: 30px;
@@ -41,4 +42,7 @@ li {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+}
+.material-symbols-outlined {
+  cursor: pointer;
 }

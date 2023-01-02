@@ -24,4 +24,13 @@ export class CartService {
       return data;
     }));
   }
+  deleteFromCart(id: number, quantity: number) {
+    var formData = new FormData();
+    formData.append('idProduct', id.toString());
+    formData.append('quantity', quantity.toString());
+    formData.append('mailCustomer', this.loginService.getUser().email);
+    return this.request.post(this.requestService.url + 'deleteFromCart', formData).pipe(map((data: any) => {
+      return data;
+    }));
+  }
 }
