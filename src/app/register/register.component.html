@@ -1,1 +1,49 @@
-<p>register works!</p>
+<div class="formContainer">
+  <form [formGroup]="registerForm" (submit)="submit()">
+    <div class="form-group">
+      <input
+        type="name"
+        class="form-control input"
+        id="name"
+        formControlName="firstName"
+        onclick="event.target.className+=' focused'"
+        pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}"
+      />
+      <label class="user-label" for="name">Prénom</label>
+    </div>
+    <div class="form-group">
+      <input
+        type="surname"
+        class="form-control input"
+        id="surname"
+        formControlName="surname"
+        onclick="event.target.className+=' focused'"
+        pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}"
+      />
+      <label class="user-label" for="surname">Nom</label>
+    </div>
+    <div class="form-group">
+      <input
+        type="email"
+        class="form-control input"
+        id="email"
+        formControlName="email"
+        onclick="event.target.className+=' focused'"
+        pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}"
+      />
+      <label class="user-label" for="email">Email</label>
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control input"
+        id="password"
+        onclick="event.target.className+=' focused'"
+        formControlName="password"
+      />
+      <label class="user-label" for="password">Password</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

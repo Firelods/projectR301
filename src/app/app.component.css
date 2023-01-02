@@ -36,7 +36,7 @@ header img {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
-  margin-left: 20%;
+  /* margin-left: 20%; */
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -48,4 +48,17 @@ header img {
 .accountGestion:hover {
   background-color: var(--dark-blue512);
   color: var(--light-grey512);
+}
+#register:hover {
+  background-color: var(--light-grey512);
+  color: black;
+}
+
+#register {
+  background-color: var(--dark-blue512);
+  color: white;
+}
+.logReg {
+  display: flex;
+  gap: 20px;
 }
