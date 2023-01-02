@@ -1,0 +1,18 @@
+.account {
+  background-color: var(--light-grey512);
+  width: 50vw;
+  height: 90%;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.headerAccount {
+  font-size: 2.5em;
+  font-weight: bold;
+}
