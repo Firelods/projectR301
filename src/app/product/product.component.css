@@ -49,6 +49,7 @@ img {
 
 .addToCart {
   color: white;
+  cursor: pointer;
   padding: 1em;
   background-color: var(--dark-blue512);
   border-radius: 20px;

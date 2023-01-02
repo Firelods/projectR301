@@ -1,4 +1,9 @@
-<p>account works!</p>
-<div>
-  {{ user.email }}
+<div class="mainContainer">
+  <div class="account">
+    <div class="headerAccount">
+      Bonjour {{ user.firstName }} {{ user.surname }}
+    </div>
+    {{ user.email }}
+    <button (click)="disconnect()">Déconnexion</button>
+  </div>
 </div>

@@ -7,6 +7,8 @@ import { ProductComponent } from './product/product.component';
 import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth.guard';
+import { CartComponent } from './cart/cart.component';
 const routes: Routes = [
   {
     path: 'admin', component: AdminPageComponent
@@ -24,10 +26,13 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'account', component: AccountComponent
+    path: 'account', component: AccountComponent, canActivate: [AuthGuard]
   },
   {
     path: 'register', component: RegisterComponent
+  },
+  {
+    path: 'cart', component: CartComponent
   }
 ];
 

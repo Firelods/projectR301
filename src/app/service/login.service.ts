@@ -31,7 +31,7 @@ export class LoginService {
     var user = localStorage.getItem('jwt');
     if (user === null) {
       // return null object
-      return { email: '', iat: 0, exp: 0 };
+      return { email: '', iat: 0, exp: 0, firstName: '', surname: '' };
     }
     console.log(jwt_decode(user));
     return jwt_decode(user);
@@ -49,5 +49,11 @@ export class LoginService {
       return false;
     }
     return moment().isBefore(this.getExpiration());
+  }
+  disconnect() {
+    this.loggedIn = false;
+    localStorage.removeItem('jwt');
+    localStorage.removeItem('expiry');
+
   }
 }

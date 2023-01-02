@@ -62,3 +62,7 @@ header img {
   display: flex;
   gap: 20px;
 }
+.products,
+.cart {
+  cursor: pointer;
+}

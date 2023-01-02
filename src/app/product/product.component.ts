@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../interfaces/product';
+import { CartService } from '../service/cart.service';
 import { ProductService } from '../service/product.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ProductService } from '../service/product.service';
 })
 export class ProductComponent {
   product!: Product;
-  constructor(private productService: ProductService, private route: ActivatedRoute) {
+  constructor(private productService: ProductService, private route: ActivatedRoute, private cartService: CartService) {
     if (history.state.product == undefined) {
       // use product service to get product by id with query params
       this.route.queryParams.subscribe(params => {
@@ -26,5 +27,12 @@ export class ProductComponent {
   ngOnInit(): void {
 
   }
-
+  addToCart() {
+    this.cartService.addToCart(this.product.id, 1).subscribe((data) => {
+      if (data.message == 'Product added to cart') {
+        alert('Product added to cart');
+      }
+      console.log(data);
+    });
+  }
 }

@@ -18,6 +18,8 @@ export class RegisterService {
     formData.append('password', password);
     formData.append('firstName', firstName);
     formData.append('surname', lastName);
+    console.log(lastName);
+
     return this.http.post<{ message: string, jwt: string }>(this.requestService.url + 'register', formData).pipe(map((data: { message: string, jwt: string }) => {
       if (data.message === 'User registered successfully') {
         this.loginService.login(email, password).subscribe((data) => {

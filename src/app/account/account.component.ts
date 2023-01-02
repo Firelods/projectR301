@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../interfaces/user';
 import { LoginService } from '../service/login.service';
 
@@ -9,8 +10,11 @@ import { LoginService } from '../service/login.service';
 })
 export class AccountComponent {
   user: User;
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router) {
     this.user = this.loginService.getUser();
   }
-
+  disconnect() {
+    this.loginService.disconnect();
+    this.router.navigate(['/']);
+  }
 }

@@ -1,0 +1,17 @@
+<div class="mainContainer">
+  <div class="cart">
+    <h1>Panier</h1>
+    <ul>
+      <li *ngFor="let cartItem of cart.productList">
+        <div class="titleProductCart">{{ cartItem.product.title }}</div>
+        <input
+          class="quantityProductCart"
+          type="number"
+          value="{{ cartItem.quantity }}"
+        />
+        <div class="productPrice">{{ cartItem.product.publicPrice }}€</div>
+      </li>
+    </ul>
+    <div>Total de votre panier : {{ total }}€</div>
+  </div>
+</div>

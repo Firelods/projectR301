@@ -22,7 +22,7 @@ export class RegisterComponent {
 
   submit() {
     console.log(this.registerForm.value);
-    this.registerService.register(this.registerForm.value.email, this.registerForm.value.password, this.registerForm.value.firstName, this.registerForm.value.lastName).subscribe((data) => {
+    this.registerService.register(this.registerForm.value.email, this.registerForm.value.password, this.registerForm.value.firstName, this.registerForm.value.surname).subscribe((data) => {
       if (data === 'User registered successfully') {
         this.router.navigate(['/']);
       }

@@ -51,6 +51,7 @@ div {
   /* height: 8vw; */
   mix-blend-mode: multiply;
   display: inline-block;
+  cursor: pointer;
 }
 .stars {
   /* padding: 5px;
@@ -68,6 +69,7 @@ div {
 }
 .productBrand {
   width: 80%;
+  cursor: pointer;
 }
 .star {
   width: 1.2vw;
