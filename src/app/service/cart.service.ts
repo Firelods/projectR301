@@ -33,4 +33,13 @@ export class CartService {
       return data;
     }));
   }
+  orderCart() {
+    var formData = new FormData();
+    formData.append('mailCustomer', this.loginService.getUser().email);
+    return this.request.post(this.requestService.url + 'stripe', formData,{ observe: 'response' }).pipe(map((data: any) => {
+      console.log(data);
+
+      return data;
+    }));
+  }
 }

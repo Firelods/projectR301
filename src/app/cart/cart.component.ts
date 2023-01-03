@@ -33,5 +33,12 @@ export class CartComponent {
       this.cart.productList.splice(this.cart.productList.indexOf(cartItem), 1);
     }
   }
+  orderCart() {
+    this.cartService.orderCart().subscribe(response => {
+      window.location.href = response.body.url;
+    });
+
+
+  }
 
 }

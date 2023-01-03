@@ -9,6 +9,7 @@ import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 const routes: Routes = [
   {
     path: 'admin', component: AdminPageComponent
@@ -32,7 +33,10 @@ const routes: Routes = [
     path: 'register', component: RegisterComponent
   },
   {
-    path: 'cart', component: CartComponent
+    path: 'cart', component: CartComponent, canActivate: [AuthGuard]
+  },
+  {
+    path:'payment', component: PaymentComponent, canActivate: [AuthGuard]
   }
 ];
 

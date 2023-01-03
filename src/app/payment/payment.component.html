@@ -1,0 +1,11 @@
+<div class="mainContainer">
+  <div class="blockMiddle">
+    <div class="success" *ngIf="this.success == 'true'">
+      Super ! Votre paiement a bien été accepté ! Vous allez recevoir un email
+      sous peu !
+    </div>
+    <div class="error" *ngIf="this.success == 'false'">
+      Mince ! Votre paiement a été refusé !
+    </div>
+  </div>
+</div>
