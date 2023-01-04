@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { LoginService } from './login.service';
@@ -10,8 +10,10 @@ import { RequestServiceService } from './request.service';
 export class CartService {
 
   constructor(private requestService: RequestServiceService, private request: HttpClient, private loginService: LoginService) { }
-  getCart() {
-    return this.request.get(this.requestService.url + 'getCart').pipe(map((data: any) => {
+  getCart(emailClient: string) {
+    let param:HttpParams = new HttpParams();
+    param = param.append('emailClient', emailClient);
+    return this.request.get(this.requestService.url + 'getCart',{params:param}).pipe(map((data: any) => {
       return data;
     }));
   }

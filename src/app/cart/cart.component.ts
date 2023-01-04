@@ -1,3 +1,4 @@
+import { LoginService } from './../service/login.service';
 import { Component } from '@angular/core';
 import { Cart } from '../interfaces/cart';
 import { CartItem } from '../interfaces/cart-item';
@@ -13,8 +14,8 @@ import { ProductService } from '../service/product.service';
 export class CartComponent {
   cart: Cart = { productList: [] };
   total: number = 0;
-  constructor(private cartService: CartService, private productService: ProductService) {
-    this.cartService.getCart().subscribe((data: { quantity: number, idProduct: number }[]) => {
+  constructor(private cartService: CartService, private productService: ProductService, private loginService: LoginService) {
+    this.cartService.getCart(this.loginService.getUser().email).subscribe((data: { quantity: number, idProduct: number }[]) => {
       data.forEach((cartItem: { quantity: number, idProduct: number }) => {
         this.productService.getProductById(cartItem.idProduct).subscribe((product: Product) => {
           this.cart.productList.push({ quantity: cartItem.quantity, product: product });
