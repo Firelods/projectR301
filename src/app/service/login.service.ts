@@ -21,7 +21,6 @@ export class LoginService {
       if (data.message === 'User login successfully') {
         this.loggedIn = true;
         localStorage.setItem('jwt', data.jwt);
-        console.log((jwt_decode(data.jwt) as { exp: { date: string, timezone_type: number, timezone: string } }).exp.date);
         localStorage.setItem('expiry', (jwt_decode(data.jwt) as { exp: { date: string, timezone_type: number, timezone: string } }).exp.date);
       }
       return data.message;
@@ -33,7 +32,6 @@ export class LoginService {
       // return null object
       return { email: '', iat: 0, exp: 0, firstName: '', surname: '' };
     }
-    console.log(jwt_decode(user));
     return jwt_decode(user);
   }
   getExpiration() {
