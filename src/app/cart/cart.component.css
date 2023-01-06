@@ -37,6 +37,7 @@ li {
   border: none;
   height: 50%;
   background-color: var(--dark-grey512);
+  padding: 0.2em 0.4em;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -45,4 +46,15 @@ li {
 }
 .material-symbols-outlined {
   cursor: pointer;
+  padding: 0.5em;
+  border-radius: 20px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+.material-symbols-outlined:hover {
+  background-color: var(--dark-grey512);
 }

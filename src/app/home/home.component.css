@@ -4,6 +4,7 @@ div {
 
 .containerAll {
   width: 100%;
+  margin-bottom: 10em;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -77,6 +78,21 @@ div {
 .productBrand {
   width: 80%;
   cursor: pointer;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  padding:0.2em 0.2em;
+
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+.productBrand:hover{
+  background-color: var(--grey512);
 }
 .star {
   width: 1.2vw;
