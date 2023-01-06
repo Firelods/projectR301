@@ -17,6 +17,7 @@
   justify-content: space-evenly;
   align-items: center;
   gap: 2vw;
+  margin-bottom: 5vh;
 }
 li {
   display: flex;
@@ -57,4 +58,37 @@ li {
 
 .material-symbols-outlined:hover {
   background-color: var(--dark-grey512);
+}
+
+#total{
+  margin: 0 0 0 50vw;
+  width: 18vw;
+  margin-bottom: 1vh;
+
+}
+
+#commandButton{
+  margin: 0 0 0 50vw;
+  width: 18vw;
+  padding: 1em 5em;
+  background-color: var(--blue512);
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  /* margin-left: 20%; */
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  border: none;
+  font-weight: bold;
+}
+#commandButton:hover {
+  background-color: var(--dark-blue512);
 }
