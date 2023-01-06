@@ -38,8 +38,25 @@ export class CartComponent {
     this.cartService.orderCart().subscribe(response => {
       window.location.href = response.body.url;
     });
-
-
+  }
+  updateQuantity(cartItem: CartItem, quantityEvent: Event) {
+    var quantity = parseInt((<HTMLInputElement>quantityEvent.target).value);
+    if (cartItem.quantity == quantity) {
+      return;
+    }
+    else if (cartItem.quantity < quantity) {
+      this.cartService.addToCart(cartItem.product.id, quantity - cartItem.quantity).subscribe();
+    }
+    else if (quantity == 0) {
+      this.cartService.deleteFromCart(cartItem.product.id, cartItem.quantity).subscribe();
+      // delete cartItem from cart list
+      this.cart.productList.splice(this.cart.productList.indexOf(cartItem), 1);
+    }
+    else {
+      this.cartService.deleteFromCart(cartItem.product.id, cartItem.quantity - quantity).subscribe();
+    }
+    this.total += (quantity - cartItem.quantity) * cartItem.product.publicPrice;
+    cartItem.quantity = quantity;
   }
 
 }

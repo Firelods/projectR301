@@ -8,6 +8,7 @@
           class="quantityProductCart"
           type="number"
           value="{{ cartItem.quantity }}"
+          (change)="updateQuantity(cartItem, $event)"
         />
         <div class="productPrice">{{ cartItem.product.publicPrice }}€</div>
         <span (click)="deleteItem(cartItem)" class="material-symbols-outlined">

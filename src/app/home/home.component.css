@@ -38,7 +38,7 @@ div {
   transition: all 0.3s ease-in-out;
 }
 
-.productDiv:hover{
+.productDiv:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 7px 13px -5px,
     rgba(0, 0, 0, 0.3) 0px 4px 8px -8px;
   transform: scale(1.05);
@@ -83,7 +83,7 @@ div {
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
-  padding:0.2em 0.2em;
+  padding: 0.2em 0.2em;
 
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -91,7 +91,7 @@ div {
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
 }
-.productBrand:hover{
+.productBrand:hover {
   background-color: var(--grey512);
 }
 .star {
@@ -105,13 +105,21 @@ div {
   align-items: center;
 }
 
-
 @media (max-width: 768px) {
-  .productDiv{
+  .productDiv {
     width: 40vw;
     height: 30vh;
   }
   .star {
     width: 5vw;
+  }
+}
+@media (max-width: 1400px) {
+  .productDiv {
+    width: 20vw;
+    height: 35vh;
+  }
+  .star {
+    width: 2.2vw;
   }
 }
