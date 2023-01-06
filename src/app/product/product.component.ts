@@ -35,4 +35,14 @@ export class ProductComponent {
       console.log(data);
     });
   }
+
+  getArrayFromNumberBlueStar(number: number): string[] {
+    var nbStar = parseInt(number.toString());
+
+    return new Array(nbStar).fill("0");
+  }
+  getArrayFromNumberGrayStar(number: number): string[] {
+    var nbStar = parseInt(number.toString());
+    return new Array(5 - nbStar).fill("0");
+  }
 }

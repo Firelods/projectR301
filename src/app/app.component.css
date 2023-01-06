@@ -29,7 +29,7 @@ header img {
   padding: 1em;
   background-color: var(--light-grey512);
   color: black;
-  font-size: 1vw;
+  font-size: 0.7em;
   cursor: pointer;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -65,4 +65,21 @@ header img {
 .products,
 .cart {
   cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  header{
+    padding:0;
+  }
+  .headerDivFlex {
+    font-size: 1.2em;
+  }
+  header img {
+    width: 25vw;
+    max-width: 125px;
+  }
+  .products{
+    display: none;
+  }
 }

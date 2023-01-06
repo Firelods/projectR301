@@ -61,3 +61,57 @@ img {
 .productPrice {
   font-size: 2em;
 }
+.star {
+  width: 1.2vw;
+}
+.starsContainer {
+  padding-left: 20%;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.productBrand{
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .bigContainer {
+    margin-top: 0;
+    flex-direction: column;
+    gap: 0;
+    justify-content: space-around;
+
+    align-items: center;
+  }
+  .productContainer {
+    width: 90vw;
+    height: 50vh;
+  }
+  .priceContainer {
+
+    width: 70vw;
+    height: 20vh;
+  }
+  .productTitle {
+    font-size: 6vw;
+  }
+  .productPrice {
+    font-size: 2em;
+  }
+  .star {
+    width: 5vw;
+  }
+  .starsContainer {
+    padding-left: 0;
+  }
+  .addToCart {
+    padding: 1.5em;
+  }
+  img{
+    width: 50vw;
+    max-width: 250px;
+  }
+}

@@ -34,6 +34,13 @@ div {
   -o-border-radius: 30px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.productDiv:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 7px 13px -5px,
+    rgba(0, 0, 0, 0.3) 0px 4px 8px -8px;
+  transform: scale(1.05);
 }
 
 .productInfos {
@@ -80,4 +87,15 @@ div {
   width: 100%;
   justify-content: flex-start;
   align-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .productDiv{
+    width: 40vw;
+    height: 30vh;
+  }
+  .star {
+    width: 5vw;
+  }
 }

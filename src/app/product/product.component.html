@@ -4,7 +4,25 @@
     <div class="textProduct">
       <div class="upperPart">
         <div class="productTitle">{{ product.title }}</div>
-        <div>Stars</div>
+        <div class="starsContainer">
+          <div
+            *ngFor="let item of this.getArrayFromNumberBlueStar(product.note)"
+            class="stars"
+          >
+            <img class="star" src="../../assets/star.png" alt="star" />
+          </div>
+          <div
+            *ngFor="let item of this.getArrayFromNumberGrayStar(product.note)"
+            class="stars"
+          >
+            <img
+              class="star"
+              style="filter: grayscale(1)"
+              src="../../assets/star.png"
+              alt="star"
+            />
+          </div>
+        </div>
       </div>
       <div class="productBrand">{{ product.brand }}</div>
       <div class="productDesc">{{ product.descriptionProduct }}</div>
