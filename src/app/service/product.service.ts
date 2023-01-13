@@ -22,4 +22,27 @@ export class ProductService {
       return data;
     }));
   }
+
+  addProduct(product: Product) {
+    // make the product in a formData
+    const formData = new FormData();
+    formData.append('name', product.title);
+    formData.append('description', product.descriptionProduct);
+    formData.append('publicPrice', product.publicPrice.toString());
+    formData.append('purchasePrice', product.purchasePrice.toString());
+    formData.append('imageURL', product.imageURL);
+    formData.append('stock', product.brand);
+
+    return this.request.post<Product>(this.requestService.url + 'addProduct', formData).pipe(map((data: Product) => {
+      return data;
+    }));
+  }
+
+  searchProduct(search: string) {
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("search", search);
+    return this.request.get<Product[]>(this.requestService.url + 'getProductByName', { params: queryParams }).pipe(map((data: Product[]) => {
+      return data;
+    }));
+  }
 }

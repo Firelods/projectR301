@@ -1,0 +1,21 @@
+<button (click)="this.makeSearch = true">Rechercher un produit</button>
+<button>Ajouter un produit</button>
+<div *ngIf="this.makeSearch" class="search">
+  <input type="search" name="search" id="search" />
+  <button (click)="searchProduct()">Rechercher</button>
+</div>
+<div class="resultSearch">
+  <ul>
+    <li *ngFor="let item of this.listProduct">{{ item.title }}</li>
+  </ul>
+</div>
+<div *ngIf="this.addProduct" class="formAddProduct">
+  <form action="">
+    <label for="title">Titre</label
+    ><input type="text" name="title" id="title" /><label for="price">Prix</label
+    ><input type="number" name="price" id="price" /><label
+      for="description"
+    ></label
+    ><input type="text" name="description" id="description" />
+  </form>
+</div>

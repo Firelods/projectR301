@@ -30,9 +30,12 @@ export class LoginService {
     var user = localStorage.getItem('jwt');
     if (user === null) {
       // return null object
-      return { email: '', iat: 0, exp: 0, firstName: '', surname: '' };
+      return { email: '', iat: 0, exp: 0, firstName: '', surname: '', admin: false };
     }
     return jwt_decode(user);
+  }
+  isUserAdmin(): boolean {
+    return this.getUser().admin;
   }
   getExpiration() {
     const expiration = localStorage.getItem('expiry');

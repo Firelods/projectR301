@@ -4,4 +4,5 @@ export interface User {
   surname: string;
   iat: number;// created at
   exp: number;// expires at
+  admin: boolean;
 }

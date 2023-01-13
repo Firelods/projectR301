@@ -4,6 +4,7 @@
       Bonjour {{ user.firstName }} {{ user.surname }}
     </div>
     {{ user.email }}
+    <button routerLink="/admin" *ngIf="this.user.admin">Administrateur</button>
     <button (click)="disconnect()">Déconnexion</button>
   </div>
 </div>
