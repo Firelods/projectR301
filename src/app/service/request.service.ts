@@ -6,7 +6,7 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class RequestServiceService {
-  url = 'http://api.seinksansdoozebank.engineer/';
+  url = 'https://api.seinksansdoozebank.engineer/';
 
 
 }
