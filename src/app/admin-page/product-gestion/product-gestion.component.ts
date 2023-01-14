@@ -18,7 +18,7 @@ export class ProductGestionComponent {
       title: new FormControl(''),
       description: new FormControl(''),
       price: new FormControl(''),
-      imageURL: new FormControl(''),
+      imageurl: new FormControl(''),
       brand: new FormControl(''),
     });
   }
@@ -33,6 +33,8 @@ export class ProductGestionComponent {
     });
   }
   submitForm() {
+    console.log(this.addProductForm.value);
+
     this.productService.addProduct({
       id: -1, note: -1, title: this.addProductForm.value.title,
       descriptionProduct: this.addProductForm.value.description,
