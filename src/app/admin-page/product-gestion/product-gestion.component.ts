@@ -18,7 +18,7 @@ export class ProductGestionComponent {
       title: new FormControl(''),
       description: new FormControl(''),
       price: new FormControl(''),
-      imageURL: new FormControl(''),
+      imageurl: new FormControl(''),
       brand: new FormControl(''),
     });
   }
@@ -33,6 +33,8 @@ export class ProductGestionComponent {
     });
   }
   submitForm() {
+    console.log(this.addProductForm.value);
+
     console.log("price input = ",this.addProductForm.value.price);
     this.productService.addProduct(new Product(-1,this.addProductForm.value.price*1.2,this.addProductForm.value.price,this.addProductForm.value.title,this.addProductForm.value.description,-1,this.addProductForm.value.imageURL,this.addProductForm.value.brand)).subscribe((data: Product) => {
       this.listProduct.push(data);

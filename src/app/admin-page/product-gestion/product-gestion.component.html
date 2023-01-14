@@ -23,23 +23,53 @@
     <form [formGroup]="addProductForm" (submit)="submitForm()">
       <div class="formInfos">
         <label for="title">Titre</label>
-        <input class="input" type="text" name="title" id="title" />
+        <input
+          formControlName="title"
+          class="input"
+          type="text"
+          name="title"
+          id="title"
+        />
       </div>
       <div class="formInfos">
         <label for="brand">Marque</label>
-        <input class="input" type="text" name="brand" id="brand" />
+        <input
+          formControlName="brand"
+          class="input"
+          type="text"
+          name="brand"
+          id="brand"
+        />
       </div>
       <div class="formInfos">
         <label for="price">Prix</label>
-        <input class="input" type="number" name="price" id="price" />
+        <input
+          formControlName="price"
+          class="input"
+          type="number"
+          name="price"
+          id="price"
+        />
       </div>
       <div class="formInfos">
         <label for="description">Description</label>
-        <input class="input" type="text" name="description" id="description" />
+        <input
+          formControlName="description"
+          class="input"
+          type="text"
+          name="description"
+          id="description"
+        />
       </div>
       <div class="formInfos">
         <label for="ImageURL">ImageURL</label>
-        <input class="input" type="text" name="ImageURL" id="ImageURL" />
+        <input
+          formControlName="imageurl"
+          class="input"
+          type="text"
+          name="ImageURL"
+          id="ImageURL"
+        />
       </div>
       <button type="submit"><span>Valider</span></button>
     </form>
