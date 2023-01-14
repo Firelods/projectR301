@@ -33,14 +33,8 @@ export class ProductGestionComponent {
     });
   }
   submitForm() {
-    this.productService.addProduct({
-      id: -1, note: -1, title: this.addProductForm.value.title,
-      descriptionProduct: this.addProductForm.value.description,
-      publicPrice: this.addProductForm.value.price,
-      purchasePrice: this.addProductForm.value.price,
-      imageURL: this.addProductForm.value.imageURL,
-      brand: this.addProductForm.value.brand
-    }).subscribe((data: Product) => {
+    console.log("price input = ",this.addProductForm.value.price);
+    this.productService.addProduct(new Product(-1,this.addProductForm.value.price*1.2,this.addProductForm.value.price,this.addProductForm.value.title,this.addProductForm.value.description,-1,this.addProductForm.value.imageURL,this.addProductForm.value.brand)).subscribe((data: Product) => {
       this.listProduct.push(data);
     });
   }

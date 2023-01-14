@@ -25,13 +25,14 @@ export class ProductService {
 
   addProduct(product: Product) {
     // make the product in a formData
+    console.log(product);
     const formData = new FormData();
-    formData.append('name', product.title);
+    formData.append('title', product.title);
     formData.append('description', product.descriptionProduct);
     formData.append('publicPrice', product.publicPrice.toString());
     formData.append('purchasePrice', product.purchasePrice.toString());
     formData.append('imageURL', product.imageURL);
-    formData.append('stock', product.brand);
+    formData.append('brand', product.brand);
 
     return this.request.post<Product>(this.requestService.url + 'addProduct', formData).pipe(map((data: Product) => {
       return data;
