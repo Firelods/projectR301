@@ -25,7 +25,6 @@ export class ProductService {
 
   addProduct(product: Product) {
     // make the product in a formData
-    console.log(product);
     const formData = new FormData();
     formData.append('title', product.title);
     formData.append('description', product.descriptionProduct);
