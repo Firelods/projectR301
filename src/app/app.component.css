@@ -82,17 +82,14 @@ header img {
 }
 
 .products:hover,
-.cart:hover{
+.cart:hover {
   cursor: pointer;
   color: var(--dark-blue512);
-
-
 }
 
-
 @media (max-width: 768px) {
-  header{
-    padding:0;
+  header {
+    padding: 0;
   }
   .headerDivFlex {
     font-size: 1.2em;
@@ -101,7 +98,10 @@ header img {
     width: 25vw;
     max-width: 125px;
   }
-  .products{
+  .products {
     display: none;
+  }
+  .logReg {
+    flex-direction: column;
   }
 }

@@ -1,3 +1,4 @@
+import { FormControl, FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/service/product.service';
@@ -11,7 +12,16 @@ export class ProductGestionComponent {
   listProduct: Product[] = [];
   makeSearch: boolean = false;
   addProduct: boolean = false;
-  constructor(private productService:ProductService) { }
+  addProductForm: FormGroup;
+  constructor(private productService: ProductService) {
+    this.addProductForm = new FormGroup({
+      title: new FormControl(''),
+      description: new FormControl(''),
+      price: new FormControl(''),
+      imageURL: new FormControl(''),
+      brand: new FormControl(''),
+    });
+  }
 
 
   searchProduct() {
@@ -20,6 +30,18 @@ export class ProductGestionComponent {
     this.productService.searchProduct(search).subscribe((data: Product[]) => {
       this.listProduct = data;
       this.makeSearch = true;
+    });
+  }
+  submitForm() {
+    this.productService.addProduct({
+      id: -1, note: -1, title: this.addProductForm.value.title,
+      descriptionProduct: this.addProductForm.value.description,
+      publicPrice: this.addProductForm.value.price,
+      purchasePrice: this.addProductForm.value.price,
+      imageURL: this.addProductForm.value.imageURL,
+      brand: this.addProductForm.value.brand
+    }).subscribe((data: Product) => {
+      this.listProduct.push(data);
     });
   }
 }

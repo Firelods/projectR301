@@ -1,8 +1,17 @@
 <div class="mainContainer">
-  <div class="admin">Page Admin</div>
-  <div class="choix">
-    <button routerLink="/admin/brand">Gérer les marques</button>
-    <button routerLink="/admin/product">Gérer les produits</button>
+  <div class="adminPage">
+    <div class="head">
+      <div class="admin">Page Admin</div>
+      <p>Que voulez vous faire ?</p>
+      <div class="choix">
+        <button routerLink="/admin/brand">
+          <span> Gérer les marques</span>
+        </button>
+        <button routerLink="/admin/product">
+          <span>Gérer les produits</span>
+        </button>
+      </div>
+    </div>
+    <div class="router"><router-outlet></router-outlet></div>
   </div>
-  <router-outlet></router-outlet>
 </div>

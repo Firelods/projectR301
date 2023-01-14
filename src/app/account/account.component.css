@@ -3,10 +3,6 @@
   width: 50vw;
   height: 90%;
   border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -18,4 +14,7 @@
 }
 .mainContainer {
   height: 90%;
+}
+.disconnect:after {
+  background: rgb(255, 59, 59);
 }
