@@ -13,7 +13,7 @@
     <div class="resultSearch">
       <ul>
         <li *ngFor="let item of this.listProduct">
-          {{ item.title }}<span class="material-symbols-outlined"> close </span>
+          {{ item.title }}<span (click)="this.deleteProduct(item.id)" class="material-symbols-outlined"> close </span>
         </li>
       </ul>
     </div>

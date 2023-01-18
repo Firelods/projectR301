@@ -38,4 +38,9 @@ export class ProductGestionComponent {
       this.listProduct.push(data);
     });
   }
+  deleteProduct(id: number) {
+    this.productService.deleteProduct(id).subscribe((data: Product) => {
+      this.listProduct = this.listProduct.filter((product) => product.id != id);
+    });
+  }
 }

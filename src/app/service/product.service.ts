@@ -45,4 +45,13 @@ export class ProductService {
       return data;
     }));
   }
+
+
+  deleteProduct(id: number) {
+    const formData = new FormData();
+    formData.append('id', id.toString());
+    return this.request.post<Product>(this.requestService.url + 'deleteProduct', formData).pipe(map((data: Product) => {
+      return data;
+    }));
+  }
 }
