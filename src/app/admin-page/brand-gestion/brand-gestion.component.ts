@@ -37,6 +37,22 @@ export class BrandGestionComponent {
     console.log(this.addBrandForm.value.imageURL)
     this.brandService.addBrand(new Brand(-1, this.addBrandForm.value.title, this.addBrandForm.value.link, this.addBrandForm.value.imageurl, this.addBrandForm.value.description)).subscribe((data: Brand) => {
       this.listBrand.push(data);
+      this.addBrand = false;
+      this.makeSearch = false;
+      alert("Marque ajoutée avec succès");
     });
+  }
+
+
+  deleteBrand(id: number) {
+    console.log(id);
+    this.brandService.deleteBrand(id).subscribe(
+      (data: Brand) => {
+        this.listBrand = this.listBrand.filter((brand) => brand.id != id);
+      },
+      (error) => {
+        alert("Impossible de supprimer cette marque. Elle est certainement utilisée par un produit.");
+      }
+    );
   }
 }

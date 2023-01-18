@@ -33,15 +33,22 @@ export class ProductService {
     formData.append('imageURL', product.imageURL);
     formData.append('brand', product.brand);
 
-    return this.request.post<Product>(this.requestService.url + 'addProduct', formData).pipe(map((data: Product) => {
-      return data;
-    }));
+    return this.request.post<Product>(this.requestService.url + 'addProduct', formData)
   }
 
   searchProduct(search: string) {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("search", search);
     return this.request.get<Product[]>(this.requestService.url + 'getProductByName', { params: queryParams }).pipe(map((data: Product[]) => {
+      return data;
+    }));
+  }
+
+
+  deleteProduct(id: number) {
+    const formData = new FormData();
+    formData.append('id', id.toString());
+    return this.request.post<Product>(this.requestService.url + 'deleteProduct', formData).pipe(map((data: Product) => {
       return data;
     }));
   }
