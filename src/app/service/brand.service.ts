@@ -32,4 +32,10 @@ export class BrandService {
     formData.append('description', brand.description);
     return this.request.post<Brand>(this.requestService.url + 'addBrand', formData);
   }
+
+  deleteBrand(id: number) {
+    const formData = new FormData();
+    formData.append('id', id.toString());
+    return this.request.post<Brand>(this.requestService.url + 'deleteBrand', formData);
+  }
 }

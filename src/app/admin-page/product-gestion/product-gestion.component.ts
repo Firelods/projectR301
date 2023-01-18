@@ -36,6 +36,9 @@ export class ProductGestionComponent {
     console.log(this.addProductForm.value.imageURL)
     this.productService.addProduct(new Product(-1,this.addProductForm.value.price*1.2,this.addProductForm.value.price,this.addProductForm.value.title,this.addProductForm.value.description,-1,this.addProductForm.value.imageurl,this.addProductForm.value.brand)).subscribe((data: Product) => {
       this.listProduct.push(data);
+      this.makeSearch = false;
+      this.addProduct = false;
+      alert("Produit ajouté avec succès");
     });
   }
   deleteProduct(id: number) {

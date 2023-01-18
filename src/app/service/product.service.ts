@@ -33,9 +33,7 @@ export class ProductService {
     formData.append('imageURL', product.imageURL);
     formData.append('brand', product.brand);
 
-    return this.request.post<Product>(this.requestService.url + 'addProduct', formData).pipe(map((data: Product) => {
-      return data;
-    }));
+    return this.request.post<Product>(this.requestService.url + 'addProduct', formData)
   }
 
   searchProduct(search: string) {
