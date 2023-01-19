@@ -1,3 +1,4 @@
+import { Product } from 'src/app/interfaces/product';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
@@ -56,5 +57,12 @@ export class LoginService {
     localStorage.removeItem('jwt');
     localStorage.removeItem('expiry');
 
+  }
+
+
+  getMissingProduct() {
+    return this.http.get<Product[]>(this.requestService.url + 'getMissingProducts').pipe(map((data: Product[]) => {
+      return data;
+    }));
   }
 }

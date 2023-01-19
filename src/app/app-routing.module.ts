@@ -1,3 +1,4 @@
+import { AccountingComponent } from './accounting/accounting.component';
 import { BrandComponent } from './brand/brand.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -47,6 +48,9 @@ const routes: Routes = [
   },
   {
     path:'payment', component: PaymentComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'accounting', component: AccountingComponent, canActivate: [AuthGuard]
   }
 ];
 
