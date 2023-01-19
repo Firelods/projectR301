@@ -1,0 +1,50 @@
+.mainContainer {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.accountingPage {
+  background-color: var(--light-grey512);
+  width: 50vw;
+  height: 90%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.salesContainer{
+  /* background-color: darkred; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: left;
+  padding: 2vh 2vw;
+}
+
+.salesList{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  padding: 1vh 1vw;
+  list-style-type: none;
+  height: 55vh;
+
+  overflow-y: scroll;
+}
+
+.sale{
+  background-color: var(--dark-grey512);
+  padding: 1vh 1vw;
+  border-radius: 7px;
+}
+
+
+.date{
+  font-weight : bold;
+}

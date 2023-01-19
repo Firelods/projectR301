@@ -7,6 +7,9 @@
     <button routerLink="/admin" *ngIf="this.user.admin">
       <span>Administrateur</span>
     </button>
+    <button routerLink="/accounting" *ngIf="this.user.admin">
+      <span>Comptabilité</span>
+    </button>
     <button class="disconnect" (click)="disconnect()">
       <span>Déconnexion</span>
     </button>

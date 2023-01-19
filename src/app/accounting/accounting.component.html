@@ -1,0 +1,17 @@
+<div class="mainContainer">
+  <div class="accountingPage">
+    <div class="profit">
+      <h2>
+        Chiffre d'affaire : {{ this.profit }} €
+      </h2>
+    </div>
+    <div class="salesContainer">
+      <h2> Ventes :</h2>
+      <ul class="salesList">
+          <li class="sale"  *ngFor="let purchase of this.listPurchases">
+            <span class="date">{{ purchase.billingDate }} : </span> {{ purchase.amountHT }}€ HT / {{ purchase.amountTTC }}€ TTC
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>

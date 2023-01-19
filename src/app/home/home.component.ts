@@ -15,9 +15,6 @@ export class HomeComponent {
   constructor(private productService: ProductService, private router: Router, private loginService: LoginService) {
     this.productService.getProducts().subscribe((data: Product[]) => {
       this.listProducts = data;
-      // this.listProducts.forEach((product: Product) => {
-      //   product.brand =
-      // });
     });
   }
 

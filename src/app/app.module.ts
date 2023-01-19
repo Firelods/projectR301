@@ -16,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductGestionComponent } from './admin-page/product-gestion/product-gestion.component';
 import { BrandGestionComponent } from './admin-page/brand-gestion/brand-gestion.component';
+import { AccountingComponent } from './accounting/accounting.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BrandGestionComponent } from './admin-page/brand-gestion/brand-gestion.
     CartComponent,
     PaymentComponent,
     ProductGestionComponent,
-    BrandGestionComponent
+    BrandGestionComponent,
+    AccountingComponent
   ],
   imports: [
     BrowserModule,
