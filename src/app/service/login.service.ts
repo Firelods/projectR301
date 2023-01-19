@@ -21,7 +21,7 @@ export class LoginService {
       if (data.message === 'User login successfully') {
         this.loggedIn = true;
         localStorage.setItem('jwt', data.jwt);
-        localStorage.setItem('expiry', (jwt_decode(data.jwt) as { exp: { date: string, timezone_type: number, timezone: string } }).exp.date);
+        localStorage.setItem('expiry', (jwt_decode(data.jwt) as { exp: string }).exp);
       }
       return data.message;
     }));
