@@ -4,6 +4,13 @@
       Bonjour {{ user.firstName }} {{ user.surname }}
     </div>
     {{ user.email }}
+    <div class="missingproductAlert" *ngIf="this.user.admin && this.missingProducts.length!=0">
+      <span *ngIf="this.missingProducts.length==1">Un produit a atteint sa quantité critique en stock.</span>
+      <span *ngIf="this.missingProducts.length>1">{{this.missingProducts.length}} produits ont atteint leur quantité critique en stock.</span>
+      <!-- <button routerLink="/missingproduct">
+        <span>Produit manquant</span>
+      </button> -->
+    </div>
     <button routerLink="/admin" *ngIf="this.user.admin">
       <span>Administrateur</span>
     </button>

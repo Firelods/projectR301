@@ -18,3 +18,11 @@
 .disconnect:after {
   background: rgb(255, 59, 59);
 }
+
+.missingproductAlert{
+  color: var(--light-grey512);
+  background-color: red;
+  opacity: 0.77;
+  border-radius: 8px;
+  padding: 0.7em;
+}
