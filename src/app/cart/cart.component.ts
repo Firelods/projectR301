@@ -36,7 +36,11 @@ export class CartComponent {
   }
   orderCart() {
     this.cartService.orderCart().subscribe(response => {
-      window.location.href = response.body.url;
+      if(response.body.error==null){
+        window.location.href = response.body.url;
+      }else{
+        alert(response.body.error);
+      }
     });
   }
   updateQuantity(cartItem: CartItem, quantityEvent: Event) {
