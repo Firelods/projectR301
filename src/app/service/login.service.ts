@@ -33,6 +33,8 @@ export class LoginService {
       // return null object
       return { email: '', iat: 0, exp: 0, firstName: '', surname: '', admin: false };
     }
+    console.log(jwt_decode(user));
+
     return jwt_decode(user);
   }
   isUserAdmin(): boolean {
@@ -41,16 +43,19 @@ export class LoginService {
   getExpiration() {
     const expiration = localStorage.getItem('expiry');
     if (expiration !== null) {
-      return moment(expiration, 'YYYY-MM-DD HH:mm:ss.SSSSSS');
+      return parseInt(expiration);
     }
-    return null;
+    return 0;
   }
 
   isLoggedIn() {
     if (this.getExpiration() === null) {
       return false;
     }
-    return moment().isBefore(this.getExpiration());
+    if (new Date().getTime() / 1000 > this.getExpiration()) {
+      this.disconnect();
+    }
+    return new Date().getTime() / 1000 < this.getExpiration();
   }
   disconnect() {
     this.loggedIn = false;
