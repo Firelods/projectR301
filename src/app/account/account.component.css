@@ -1,0 +1,28 @@
+.account {
+  background-color: var(--light-grey512);
+  width: 50vw;
+  height: 90%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.headerAccount {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+.mainContainer {
+  height: 90%;
+}
+.disconnect:after {
+  background: rgb(255, 59, 59);
+}
+
+.missingproductAlert {
+  color: var(--light-grey512);
+  background-color: red;
+  opacity: 0.77;
+  border-radius: 5px;
+  padding: 0.7em;
+}

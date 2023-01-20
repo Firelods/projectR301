@@ -1,9 +1,125 @@
+div {
+  display: inline-block;
+}
+
+.containerAll {
+  width: 100%;
+  margin-bottom: 10em;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.mainContainer {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3vw;
+  margin-top: 5vh;
+}
+
+.productDiv {
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  height: 16vw;
+  background-color: var(--light-grey512);
+  align-items: center;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.productDiv:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 7px 13px -5px,
+    rgba(0, 0, 0, 0.3) 0px 4px 8px -8px;
+  transform: scale(1.05);
+}
+
+.productInfos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
 .productImg {
-  width: 10vw;
+  width: 80%;
+  /* height: 8vw; */
   mix-blend-mode: multiply;
+  display: inline-block;
+  cursor: pointer;
 }
 .stars {
-  padding: 5px;
+  /* padding: 5px;
   background-color: var(--blue512);
-  width: 5px;
+  width: 5px; */
+  /* width: 80%; */
+}
+.productTitle {
+  font-weight: bold;
+}
+.groupPriceTitle {
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+}
+.productBrand {
+  width: 80%;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  padding: 0.2em 0.2em;
+
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+.productBrand:hover {
+  background-color: var(--grey512);
+}
+.star {
+  width: 1.2vw;
+}
+.starsContainer {
+  padding-left: 20%;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .productDiv {
+    width: 40vw;
+    height: 30vh;
+  }
+  .star {
+    width: 5vw;
+  }
+}
+@media (max-width: 1400px) and (min-width: 768px) {
+  .productDiv {
+    width: 20vw;
+    height: 35vh;
+  }
+  .star {
+    width: 2.2vw;
+  }
 }

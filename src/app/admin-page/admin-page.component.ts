@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../interfaces/product';
-import { ProductServiceService } from '../service/product.service';
+import { ProductService } from '../service/product.service';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-admin-page',
@@ -8,7 +9,10 @@ import { ProductServiceService } from '../service/product.service';
   styleUrls: ['./admin-page.component.css']
 })
 export class AdminPageComponent {
+  user = this.loginService.getUser();
+  constructor(private loginService:LoginService){
 
+  }
 
 
 }

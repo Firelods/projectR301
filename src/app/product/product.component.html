@@ -1,0 +1,35 @@
+<div class="bigContainer">
+  <div class="productContainer">
+    <img src="{{ product.imageURL }}" alt="a" />
+    <div class="textProduct">
+      <div class="upperPart">
+        <div class="productTitle">{{ product.title }}</div>
+        <div class="starsContainer">
+          <div
+            *ngFor="let item of this.getArrayFromNumberBlueStar(product.note)"
+            class="stars"
+          >
+            <img class="star" src="../../assets/star.png" alt="star" />
+          </div>
+          <div
+            *ngFor="let item of this.getArrayFromNumberGrayStar(product.note)"
+            class="stars"
+          >
+            <img
+              class="star"
+              style="filter: grayscale(1)"
+              src="../../assets/star.png"
+              alt="star"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="productBrand">{{ product.brand }}</div>
+      <div class="productDesc">{{ product.descriptionProduct }}</div>
+    </div>
+  </div>
+  <div class="priceContainer">
+    <div class="productPrice">{{ product.publicPrice }} €</div>
+    <div class="addToCart" (click)="addToCart()">Ajouter au panier</div>
+  </div>
+</div>

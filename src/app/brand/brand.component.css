@@ -1,0 +1,45 @@
+
+
+#mainContainer{
+  background-color: var(--light-grey512);
+  margin: 0vh auto;
+  width: 90vw;
+  height: 80vh;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0vh 2vw;
+}
+
+img{
+  margin-top: 3vh;
+  width: calc(min(30vw, 200px));
+}
+
+#brandName{
+  font-size: 5vh;
+  font-weight: 600;
+  color: var(--dark-blue512);
+}
+
+#brandDescription{
+  margin-top: 1vh;
+  font-size: 2.5vh;
+}
+
+#brandLink{
+  font-size: 2.4vh;
+  margin-top: 5vh;
+}
+
+
+.bigContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100vw;
+}

@@ -1,0 +1,67 @@
+<div class="gestionProd">
+  <div class="choix">
+    <button (click)="this.makeSearch = true; this.addBrand = false">
+      <span>Rechercher une Marque</span>
+    </button>
+    <button (click)="this.makeSearch = false; this.addBrand = true">
+      <span>Ajouter une Marque</span>
+    </button>
+  </div>
+  <div *ngIf="this.makeSearch" class="search">
+    <input class="input" type="search" name="search" id="search" />
+    <button (click)="searchBrand()"><span>Rechercher</span></button>
+    <div class="resultSearch">
+      <ul>
+        <li *ngFor="let item of this.listBrand">
+          {{ item.title }}<span (click)="this.deleteBrand(item.id)" class="material-symbols-outlined"> close </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="this.addBrand" class="formAddProduct">
+    <form [formGroup]="addBrandForm" (submit)="submitForm()">
+      <div class="formInfos">
+        <label for="title">Titre</label>
+        <input
+          formControlName="title"
+          class="input"
+          type="text"
+          name="title"
+          id="title"
+        />
+      </div>
+      <div class="formInfos">
+        <label for="link">Lien</label>
+        <input
+          formControlName="link"
+          class="input"
+          type="text"
+          name="link"
+          id="link"
+        />
+      </div>
+      <div class="formInfos">
+        <label for="description">Description</label>
+        <input
+          formControlName="description"
+          class="input"
+          type="text"
+          name="description"
+          id="description"
+        />
+      </div>
+      <div class="formInfos">
+        <label for="ImageURL">ImageURL</label>
+        <input
+          formControlName="imageurl"
+          class="input"
+          type="text"
+          name="imageURL"
+          id="imageURL"
+        />
+      </div>
+      <button type="submit"><span>Valider</span></button>
+    </form>
+  </div>
+</div>

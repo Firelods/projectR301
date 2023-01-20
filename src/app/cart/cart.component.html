@@ -1,0 +1,24 @@
+<div class="mainContainer">
+  <div class="cart">
+    <h1>Panier</h1>
+    <ul>
+      <li *ngFor="let cartItem of cart.productList">
+        <div class="titleProductCart">{{ cartItem.product.title }}</div>
+        <input
+          class="quantityProductCart"
+          type="number"
+          value="{{ cartItem.quantity }}"
+          (change)="updateQuantity(cartItem, $event)"
+        />
+        <div class="productPrice">{{ cartItem.product.publicPrice }}€</div>
+        <span (click)="deleteItem(cartItem)" class="material-symbols-outlined">
+          close
+        </span>
+      </li>
+    </ul>
+    <div id="total">Total de votre panier : {{ total }}€</div>
+    <button id="commandButton" (click)="orderCart()">
+      <span>Passer commande</span>
+    </button>
+  </div>
+</div>

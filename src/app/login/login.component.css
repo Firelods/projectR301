@@ -1,0 +1,94 @@
+.formContainer > form {
+  background-color: var(--light-grey512);
+  width: 50vw;
+  height: 90%;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.formContainer {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  position: relative;
+}
+.input {
+  max-width: 90vw;
+  height: 44px;
+  background-color: #05060f0a;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #05060f99;
+  transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+
+.input:hover,
+.input:focus,
+.input-group:hover .input {
+  outline: none;
+  border-color: #05060f;
+}
+
+.input-group:hover .label,
+.input:focus {
+  color: #05060fc2;
+}
+button {
+  cursor: pointer;
+  color: #090909;
+  /* padding: 0.7em 1.7em; */
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: var(--grey512);
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 24px #c5c5c5, -6px -6px 24px #ffffff;
+}
+button span {
+  color: #090909;
+}
+button:hover {
+  border: 2px solid #2196f3;
+  transform: translate(0px, 3px);
+  -webkit-transform: translate(0px, 3px);
+  -moz-transform: translate(0px, 3px);
+  -ms-transform: translate(0px, 3px);
+  -o-transform: translate(0px, 3px);
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+button:hover span {
+  color: white;
+}
+button:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
+@media (max-width: 800px) {
+  .formContainer > form {
+    width: 80vw;
+  }
+}

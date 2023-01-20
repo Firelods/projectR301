@@ -1,9 +1,35 @@
 <header>
   <div class="headerDivFlex">
-    <img src="../assets/512.png" alt="512Bank" />
-    <div>Produits</div>
-    <div>Panier</div>
-    <div id="login" routerLink="">Connexion</div>
+    <img routerLink="/" src="../assets/512.png" alt="512Bank" />
+    <div routerLink="/" class="products">Produits</div>
+    <div routerLink="/cart" class="cart">Panier</div>
+    <div class="logReg">
+      <div
+        class="accountGestion"
+        id="login"
+        *ngIf="!this.loginService.isLoggedIn()"
+        routerLink="/login"
+      >
+        Connexion
+      </div>
+
+      <div
+        class="accountGestion"
+        id="register"
+        *ngIf="!this.loginService.isLoggedIn()"
+        routerLink="/register"
+      >
+        Inscription
+      </div>
+    </div>
+    <div
+      class="accountGestion"
+      id="account"
+      *ngIf="this.loginService.isLoggedIn()"
+      routerLink="/account"
+    >
+      Votre Compte
+    </div>
   </div>
 </header>
 <main>

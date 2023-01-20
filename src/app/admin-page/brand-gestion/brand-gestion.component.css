@@ -1,0 +1,92 @@
+button span {
+  padding: 0.6em 1.2em;
+}
+.choix {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+}
+.input {
+  max-width: 15vw;
+  min-width: 150px;
+  height: 44px;
+  background-color: #05060f0a;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  border: 2px solid #05060f6e;
+  font-size: 1rem;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+
+.input:hover,
+.input:focus,
+.input-group:hover .input {
+  outline: none;
+  border-color: #05060f;
+}
+
+.input-group:hover .label,
+.input:focus {
+  color: #05060fc2;
+}
+
+.search {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 70%;
+  justify-content: space-evenly;
+}
+.gestionProd {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  gap: 2vw;
+  align-items: center;
+  width: 100%;
+  height: 20vh;
+  overflow-y: scroll;
+}
+li {
+  padding: 1em;
+  background-color: var(--dark-grey512);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.material-symbols-outlined {
+  font-size: 1.5em;
+  color: var(--light-grey512);
+  cursor: pointer;
+}
+
+.formInfos {
+  display: flex;
+  flex-direction: column;
+}
+
+.formAddProduct > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
