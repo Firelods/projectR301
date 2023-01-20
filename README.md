@@ -14,3 +14,7 @@ Ce projet a pour but de rendre disponible un site de E-commerce comprenant un ba
 ## http://seinksansdoozebank.engineer/
 
 ### Le dépôt de l'API est disponible [ici](https://github.com/Firelods/apiR301)
+
+
+Pour initialiser le projet chez vous : `npm i`
+Pour avoir le rendu en local : `ng serve -o`
