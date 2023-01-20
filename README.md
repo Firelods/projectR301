@@ -11,4 +11,6 @@ Ce projet a pour but de rendre disponible un site de E-commerce comprenant un ba
 - Langage Back-End (API REST) : PHP
 - Hébergeur : Digital Ocean
 
-## http://seinksansdoozebank.engineer/api/
+## http://seinksansdoozebank.engineer/
+
+### Le dépôt de l'API est disponible [ici](https://github.com/Firelods/apiR301)
