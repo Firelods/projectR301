@@ -2,7 +2,7 @@
 
 Ce projet a pour but de rendre disponible un site de E-commerce comprenant un back-end en PHP.
 
-## Ce projet est réalisé par Antoine Fadda-Rodriguez et Clément Lefèvre
+## Ce projet est réalisé par Antoine FADDA RODRIGUEZ et Clément LEFEVRE
 
 ### Stack technique :
 
